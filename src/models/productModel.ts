@@ -15,9 +15,13 @@ const ProductSchema = new Schema({
         required: true,
         default: 0
     },
-    image: {
-        type: Number,
-        required: false,
+    deleted: {
+        type: Boolean, 
+        default: false
+    },
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: 'Category'
     }
 }, {timestamps: true});
 
